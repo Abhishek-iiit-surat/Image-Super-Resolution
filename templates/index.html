@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Reconstruction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script
+      src="https://kit.fontawesome.com/39a0c9ee72.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belanosima&family=Montserrat:wght@500;600&family=Noto+Sans:wght@200&family=Poppins:wght@600&family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <span class="text">Super Resolution</span>
+          <i class="logo fa-brands fa-github"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="center">
+      <div id="left">
+        <span class="left-text">Image Upscaler</span>
+        <br />
+        <p>
+          Unleash the Power of AI to Enhance and Enlarge Your Images with
+          Unparalleled Precision. Elevate Your Visuals to New Heights with our
+          Cutting-Edge Super Resolution Technology.
+        </p>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" class="upload-button" placeholder="Upload Image"/>
+            <!-- <label for="files" class="upload-button">Select Image</label> -->
+          <!-- <input id="files" style="visibility:hidden;" type="file"> -->
+
+            <input type="submit" value="Download" class="submit-button" />
+            
+        </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+      </div>
+      <div id="right">
+        <!-- <img src="background.jpg" alt="Image"> -->
+      </div>
+    </div>
+  </body>
+</html>
