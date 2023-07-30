@@ -1,2 +1,2 @@
 # Image-Super-Resolution
-Developed a Machine Learning Model, it enhances the quality of an image
+Convert the low resolution image to high resolution using Machine Learning.
